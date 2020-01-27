@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepositoryViewController: UIViewController {
   
@@ -14,6 +16,8 @@ class RepositoryViewController: UIViewController {
   @IBOutlet private weak var tableView: UITableView!
   
   var viewModel: RepositoryViewModel!
+  
+  private let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,10 +31,30 @@ class RepositoryViewController: UIViewController {
     
     let input = RepositoryViewModel.Input(
       viewWillAppear: viewWillAppear,
-      search: searchBar.rx.text.orEmpty.asDriver()
+      search: searchBar.rx.text.orEmpty.asDriver().throttle(.milliseconds(300), latest: true)
     )
     
     let output = viewModel.transform(input: input)
     
+    output.progress.drive(onNext: {[weak self] in
+      $0 ? self?.showProgressHud() : self?.hideProgressHud()
+      }).disposed(by: disposeBag)
+    
+    output.error.drive(onNext: {[weak self] in
+      self?.alert(
+        title: "에러",
+        message: $0.localizedDescription,
+        rightButtonTitle: "확인"
+      )
+    }).disposed(by: disposeBag)
+    
+    output
+      .repository
+      .drive(
+        tableView.rx.items(cellIdentifier: "RepositoryCell")
+      ) {(_, element: Repository, cell: RepositoryCell) in
+        cell.setModel(with: element)
+    }
+    .disposed(by: disposeBag)
   }
 }

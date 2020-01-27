@@ -19,7 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     NetworkActivityLogger.shared.startLogging()
-    guard let _ = (scene as? UIWindowScene) else { return }
+    
+    guard let windowScene = (scene as? UIWindowScene) else { return }
+    window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+    window?.windowScene = windowScene
+    
+    let vc = RepositoryCoordinator().getMainView()
+    let naviVC = UINavigationController(rootViewController: vc)
+    
+    window?.rootViewController = naviVC
+    window?.makeKeyAndVisible()
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

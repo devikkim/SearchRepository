@@ -17,6 +17,7 @@
 		73AA28EE23DEEBA200EEAA59 /* RepositoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28ED23DEEBA200EEAA59 /* RepositoryCoordinator.swift */; };
 		73AA28F123DEEBE200EEAA59 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F023DEEBE200EEAA59 /* Coordinator.swift */; };
 		73AA28F323DEEDE800EEAA59 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F223DEEDE800EEAA59 /* RepositoryService.swift */; };
+		73AA28F623DEF4F100EEAA59 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F523DEF4F100EEAA59 /* UIViewController+Ext.swift */; };
 		73C1DE0623D971B100A54B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C1DE0523D971B100A54B29 /* AppDelegate.swift */; };
 		73C1DE0823D971B100A54B29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C1DE0723D971B100A54B29 /* SceneDelegate.swift */; };
 		73C1DE0D23D971B100A54B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C1DE0B23D971B100A54B29 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		73AA28ED23DEEBA200EEAA59 /* RepositoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCoordinator.swift; sourceTree = "<group>"; };
 		73AA28F023DEEBE200EEAA59 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		73AA28F223DEEDE800EEAA59 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		73AA28F523DEF4F100EEAA59 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		73C1DE0223D971B100A54B29 /* SearchRepository.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchRepository.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C1DE0523D971B100A54B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73C1DE0723D971B100A54B29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				73C1DE2F23D985E300A54B29 /* NSError+Ext.swift */,
+				73AA28F523DEF4F100EEAA59 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			files = (
 				73AA28A023DEDFFF00EEAA59 /* Repository.swift in Sources */,
 				73AA28A223DEE0DF00EEAA59 /* Owner.swift in Sources */,
+				73AA28F623DEF4F100EEAA59 /* UIViewController+Ext.swift in Sources */,
 				73C1DE2B23D9851C00A54B29 /* APIRouter.swift in Sources */,
 				73AA28E823DEEB6100EEAA59 /* RepositoryViewController.swift in Sources */,
 				73C1DE2D23D9853E00A54B29 /* APIManager.swift in Sources */,

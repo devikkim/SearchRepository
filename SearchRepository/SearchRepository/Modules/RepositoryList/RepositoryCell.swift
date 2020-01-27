@@ -9,16 +9,18 @@
 import UIKit
 
 class RepositoryCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+  
+  @IBOutlet private weak var repositoryNameLabel: UILabel!
+  @IBOutlet private weak var repositoryDescriptionLabel: UILabel!
+  @IBOutlet private weak var updatedAtLabel: UILabel!
+  @IBOutlet private weak var starLabel: UILabel!
+  @IBOutlet private weak var languageLabel: UILabel!
+  
+  func setModel(with model: Repository) {
+    repositoryNameLabel.text = model.name
+    repositoryDescriptionLabel.text = model.description
+    updatedAtLabel.text = model.updatedAt
+    starLabel.text = "\(model.stargazersCount ?? 0)"
+    languageLabel.text = model.language
+  }
 }

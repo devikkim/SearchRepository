@@ -11,15 +11,14 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 enum APIRouter {
-  case search(text: String?)
+  case search(text: String)
 }
 
 extension APIRouter {
-  //https://api.github.com/search/repositories?q=topic:ruby+topic:rails
   private var endpoint: String {
     switch self {
     case .search(let text):
-      return "https://api.github.com/search/repositories?q=\(text ?? "")"
+      return "https://api.github.com/search/repositories?q=\(text)"
     }
   }
   

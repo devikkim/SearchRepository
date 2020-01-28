@@ -23,7 +23,7 @@ class SearchRepositoryTests: XCTestCase {
       expt.fulfill()
     }
     
-    APIRouter.search(text: "Alamofire")
+    APIRouter.search(text: "Alamofire", page: 0)
       .json(success: success, failure: failure)
     
     wait(for: [expt], timeout: 5.0)

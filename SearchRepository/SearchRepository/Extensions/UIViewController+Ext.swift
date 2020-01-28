@@ -40,7 +40,7 @@ extension UIViewController {
     rightButtonAction: (() -> Void)? = nil,
     leftButtonAction: (() -> Void)? = nil
   ) {
-    let dialog = UIAlertController(title: "제목", message: "내용", preferredStyle: .alert)
+    let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
     
     let rightAction = UIAlertAction(title: rightButtonTitle, style: .default) { _ in
       rightButtonAction?()

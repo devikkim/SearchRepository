@@ -17,7 +17,7 @@ class RepositoryCell: UITableViewCell {
   @IBOutlet private weak var languageLabel: UILabel!
   
   func setModel(with model: Repository) {
-    repositoryNameLabel.text = model.name
+    repositoryNameLabel.text = "\(model.owner?.login ?? "")/\(model.name ?? "nil")"
     repositoryDescriptionLabel.text = model.description
     updatedAtLabel.text = model.updatedAt
     starLabel.text = "\(model.stargazersCount ?? 0)"

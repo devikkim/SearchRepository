@@ -12,6 +12,7 @@ import ObjectMapper
 
 enum APIRouter {
   case search(text: String)
+  case next(text: String, page: Int)
 }
 
 extension APIRouter {
@@ -19,12 +20,15 @@ extension APIRouter {
     switch self {
     case .search(let text):
       return "https://api.github.com/search/repositories?q=\(text)"
+    case .next(let text, let page):
+      return "https://api.github.com/search/repositories?q=\(text)&page=\(page)"
     }
   }
   
   private var method: HTTPMethod {
     switch self {
     case .search: return .get
+    case .next: return .get
     }
   }
 }

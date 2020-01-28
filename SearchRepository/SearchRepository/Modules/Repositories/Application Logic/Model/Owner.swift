@@ -16,6 +16,7 @@ struct Owner: Mappable {
   var url: String?
   var receivedEventsURL: String?
   var type: String?
+  var login: String?
   
   init?(map: Map) {
     
@@ -29,5 +30,6 @@ struct Owner: Mappable {
     url <- map["url"]
     receivedEventsURL <- map["received_events_url"]
     type <- map["type"]
+    login <- map["login"]
   }
 }

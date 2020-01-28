@@ -13,6 +13,7 @@ target 'SearchRepository' do
   
   # Alamofire + ObjectMapper
   pod 'AlamofireObjectMapper', '~> 5.2'
+  pod 'AlamofireNetworkActivityLogger'
   
   # IndicatorView
   pod 'NVActivityIndicatorView'
